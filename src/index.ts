@@ -1,5 +1,11 @@
-function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
+import express, { Request, Response } from "express";
+const app = express();
+const port = 3000;
 
-console.log(greet("World"));
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello World!");
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
